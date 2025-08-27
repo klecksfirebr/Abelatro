@@ -1,0 +1,15 @@
+body{
+    background: linear-gradient(rgb(54, 54, 54) , rgb(54, 54, 54) , rgb(54, 54, 54));
+}
+
+#cartas{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.carta{
+    background-image: url(./carta.png);
+    width: 73px;
+    height: 98px;
+}
