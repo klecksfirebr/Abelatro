@@ -2,14 +2,25 @@ body{
     background: linear-gradient(rgb(54, 54, 54) , rgb(54, 54, 54) , rgb(54, 54, 54));
 }
 
-#cartas{
-    text-align: center;
+#cartas {
     display: flex;
-    flex-direction: row;
-}
-
-.carta{
+    flex-wrap: nowrap;          /* não quebra linha */
+    justify-content: center;    /* centraliza */
+    gap: clamp(2px, 1vw, 15px); /* espaço que se adapta */
+    overflow: hidden;           /* evita barra de rolagem */
+  }
+  
+  .carta {
+    width: 8vw;   /* cartas diminuem de acordo com a tela */
+    max-width: 146px;
+    height: calc(8vw * 1.34);
+    max-height: 196px;
     background-image: url(./carta.png);
-    width: 73px;
-    height: 98px;
+    background-size: cover;
+  }
+.naipe{
+    background-image: url(cartas.png);
+    width: 146px;
+    height: 196px;
+
 }
