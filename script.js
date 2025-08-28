@@ -16,5 +16,5 @@ function criarCarta(id, naipe, classe) {
     divCartas.innerHTML += `<div class="carta" id="cartaId${id}"><div class="naipe" id="naipeId${id}"></div></div>`
 
     let naipeIndex = document.getElementById(`naipeId${id}`)
-    naipeIndex.style.backgroundPosition = `${classe * 146}px ${naipe * 196}px`
+    naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh`
 }
