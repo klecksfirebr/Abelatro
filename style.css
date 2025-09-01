@@ -1,8 +1,34 @@
 body {
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+#blind{
   background: linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54), rgb(54, 54, 54));
+  height: 100vh;
+  width: 25vw;
+}
+
+main{
+  background: linear-gradient(rgba(24, 95, 10, 0.438),rgba(24, 95, 10, 0.438),rgba(24, 95, 10, 0.438));
+}
+
+#jokers{
+  width: 75vw;
+  height: 25vh;
+}
+
+#jogo{
+  width: 75vw;
+  height: 50vh;
 }
 
 #cartas {
+  width: 75vw;
+  height: 25vh;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -11,7 +37,7 @@ body {
 .carta {
   background-image: url(./carta.png);
   width: 7vw;
-  height: 18vh;
+  height: 19.2vh;
   background-size: cover;
 }
 
