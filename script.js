@@ -18,12 +18,10 @@ async function criarCarta(id, naipe, classe) {
     let naipeIndex = document.getElementById(`naipeId${id}`)
     naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh`
 
-<<<<<<< HEAD
-    
     let ploim = new Audio("ploim.mp3");
     ploim.play()
-    
-    await delay(2500)
+
+    await delay(250)
 
     let cartaIndex = document.getElementById(`cartaId${id}`)
     cartaIndex.classList.remove('spawn');
@@ -31,10 +29,4 @@ async function criarCarta(id, naipe, classe) {
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-  }  
-
-=======
-    let ploim = new Audio("ploim.mp3");
-    ploim.play()
-}
->>>>>>> 0f62ff08b8b9075b672bdeb1a6999624570094ee
+}  

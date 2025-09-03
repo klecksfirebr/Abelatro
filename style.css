@@ -41,12 +41,10 @@ main {
   height: 19.8vh;
   background-size: cover;
   transition: 80ms ease-in-out;
-<<<<<<< HEAD
-  
 }
 
 .spawn {
-  animation: spawn 2500ms;
+  animation: spawn 250ms;
 }
 
 .carta:hover {
@@ -70,24 +68,8 @@ main {
   100% {
     transform: rotateY(360deg);
     transform: translateX(0px);
-=======
-  animation: spawn 250ms;
+    animation: spawn 250ms;
 }
-
-.carta:hover{
-  transform: translateY(-30px);
-}
-
-@keyframes spawn{
-  0%{
-  }
-  50%{
-    transform: rotateY(180deg);
-  }
-  100%{
-    transform: rotateY(360deg);
->>>>>>> 0f62ff08b8b9075b672bdeb1a6999624570094ee
-  }
 }
 
 .naipe {
