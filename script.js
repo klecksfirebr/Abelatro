@@ -17,4 +17,7 @@ function criarCarta(id, naipe, classe) {
 
     let naipeIndex = document.getElementById(`naipeId${id}`)
     naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh`
+
+    let ploim = new Audio("ploim.mp3");
+    ploim.play()
 }

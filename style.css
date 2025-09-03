@@ -37,11 +37,29 @@ main{
 .carta {
   background-image: url(./carta.png);
   width: 7vw;
-  height: 19.2vh;
+  height: 19.8vh;
   background-size: cover;
+  transition: 80ms ease-in-out;
+  animation: spawn 250ms;
+}
+
+.carta:hover{
+  transform: translateY(-30px);
+}
+
+@keyframes spawn{
+  0%{
+  }
+  50%{
+    transform: rotateY(180deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
 }
 
 .naipe {
+  margin-top: 0.8vh;
   background-image: url(cartas.png);
   background-size: 91vw 72vh;
   width: 7vw;
