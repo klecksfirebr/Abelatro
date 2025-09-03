@@ -10,14 +10,31 @@ function teste() {
     criarCarta(cardId, IdCartas[cardId][0], IdCartas[cardId][1])
 }
 
-function criarCarta(id, naipe, classe) {
+async function criarCarta(id, naipe, classe) {
     let divCartas = document.getElementById('cartas')
 
-    divCartas.innerHTML += `<div class="carta" id="cartaId${id}"><div class="naipe" id="naipeId${id}"></div></div>`
+    divCartas.innerHTML += `<div class="carta spawn" id="cartaId${id}"><div class="naipe" id="naipeId${id}"></div></div>`
 
     let naipeIndex = document.getElementById(`naipeId${id}`)
     naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh`
 
+<<<<<<< HEAD
+    
+    let ploim = new Audio("ploim.mp3");
+    ploim.play()
+    
+    await delay(2500)
+
+    let cartaIndex = document.getElementById(`cartaId${id}`)
+    cartaIndex.classList.remove('spawn');
+}
+
+async function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }  
+
+=======
     let ploim = new Audio("ploim.mp3");
     ploim.play()
 }
+>>>>>>> 0f62ff08b8b9075b672bdeb1a6999624570094ee

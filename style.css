@@ -1,27 +1,28 @@
 body {
   margin: 0;
   padding: 0;
-  
+
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
-#blind{
+#blind {
   background: linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54), rgb(54, 54, 54));
   height: 100vh;
   width: 25vw;
 }
 
-main{
-  background: linear-gradient(rgba(24, 95, 10, 0.438),rgba(24, 95, 10, 0.438),rgba(24, 95, 10, 0.438));
+main {
+  background: linear-gradient(rgba(24, 95, 10, 0.438), rgba(24, 95, 10, 0.438), rgba(24, 95, 10, 0.438));
 }
 
-#jokers{
+#jokers {
   width: 75vw;
   height: 25vh;
 }
 
-#jogo{
+#jogo {
   width: 75vw;
   height: 50vh;
 }
@@ -40,6 +41,36 @@ main{
   height: 19.8vh;
   background-size: cover;
   transition: 80ms ease-in-out;
+<<<<<<< HEAD
+  
+}
+
+.spawn {
+  animation: spawn 2500ms;
+}
+
+.carta:hover {
+  transform: translateY(-30px);
+}
+
+@keyframes spawn {
+  0% {
+    transform: translateX(1500px);
+    background-image: url(./carta.png);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+    background-image: url(./back-carta.png);
+  }
+
+  90%{
+    background-image: url(./carta.png);
+  }
+  100% {
+    transform: rotateY(360deg);
+    transform: translateX(0px);
+=======
   animation: spawn 250ms;
 }
 
@@ -55,6 +86,7 @@ main{
   }
   100%{
     transform: rotateY(360deg);
+>>>>>>> 0f62ff08b8b9075b672bdeb1a6999624570094ee
   }
 }
 
