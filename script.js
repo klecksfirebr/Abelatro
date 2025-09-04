@@ -5,15 +5,21 @@ function randomizarCarta(min, max) {
 }
 
 let cardId = 0
-function teste() {
-    cardId = randomizarCarta(0, 51)
-    criarCarta(cardId, IdCartas[cardId][0], IdCartas[cardId][1])
+async function teste() {
+    for(let i = 0; i < 8;i++){
+        cardId = randomizarCarta(0, 51)
+        criarCarta(cardId, IdCartas[cardId][0], IdCartas[cardId][1])
+        await delay(50)
+    }
 }
 
 async function criarCarta(id, naipe, classe) {
     let divCartas = document.getElementById('cartas')
 
-    divCartas.innerHTML += `<div class="carta spawn" id="cartaId${id}"><div class="naipe" id="naipeId${id}"></div></div>`
+    divCartas.insertAdjacentHTML("beforeend", 
+        `<div class="carta spawn" id="cartaId${id}">
+           <div class="naipe naipeSpawn" id="naipeId${id}"></div>
+         </div>`);
 
     let naipeIndex = document.getElementById(`naipeId${id}`)
     naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh`
@@ -25,8 +31,23 @@ async function criarCarta(id, naipe, classe) {
 
     let cartaIndex = document.getElementById(`cartaId${id}`)
     cartaIndex.classList.remove('spawn');
+    naipeIndex.classList.remove('naipeSpawn');
 }
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }  
+
+function ajeitarCarta(){
+    let cartaIndex = document.getElementsByClassName('carta')
+    let larguraCarta = window.innerWidth * 0.07;
+    let alturaCarta = window.innerHeight * 0.198;
+
+    if(larguraCarta > 65){
+        for(let i = 0; i < IdCartas.length; i++){
+            if(9 = 9){
+
+            }
+        }
+    }
+}
