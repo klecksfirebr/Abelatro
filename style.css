@@ -45,7 +45,7 @@ main {
   height: 19.8vh;
   background-size: cover;
   transition: 80ms ease-in-out;
-
+  position:relative;
 }
 
 .carta:hover {
