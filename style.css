@@ -14,7 +14,7 @@ body {
 }
 
 main {
-  background: linear-gradient(rgba(24, 95, 10, 0.438), rgba(24, 95, 10, 0.438), rgba(24, 95, 10, 0.438));
+  background: linear-gradient(rgba(24, 95, 10, 0.438), rgba(27, 107, 11, 0.438), rgba(33, 128, 14, 0.438));
 }
 
 #jokers {
@@ -33,6 +33,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  
 }
 
 .spawn {
@@ -49,7 +50,10 @@ main {
 }
 
 .carta:hover {
-  transform: translateY(-30px);
+  transform: translateY(-6px);
+  transform: rotate(-8deg);
+  width: 7vw !important;
+  height: 19.8vh !important;
 }
 
 .naipe {
@@ -58,6 +62,11 @@ main {
   background-size: 91vw 72vh;
   width: 7vw;
   height: 18vh;
+}
+
+.naipe:hover {
+  width: 7vw !important;
+  height: 18vh !important;
 }
 
 .naipeSpawn{
