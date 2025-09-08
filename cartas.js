@@ -1,7 +1,7 @@
 let IdCartas = [[1, 1, 0], [2, 1, 1], [3, 1, 2], [4, 1, 3], [1, 2, 4], [2, 2, 5], [3, 2, 6], [4, 2, 7], [1, 3, 8], [2, 3, 9], [3, 3, 10], [4, 3, 11], [1, 4, 12], [2, 4, 13], [3, 4, 14], [4, 4, 15], [1, 5, 16], [2, 5, 17], [3, 5, 18], [4, 5, 19], [1, 6, 20], [2, 6, 21], [3, 6, 22], [4, 6, 23], [1, 7, 24], [2, 7, 25], [3, 7, 26], [4, 7, 27], [1, 8, 28], [2, 8, 29], [3, 8, 30], [4, 8, 31], [1, 9, 32], [2, 9, 33], [3, 9, 34], [4, 9, 35], [1, 10, 36], [2, 10, 37], [3, 10, 38], [4, 10, 39], [1, 11, 40], [2, 11, 41], [3, 11, 42], [4, 11, 43], [1, 12, 44], [2, 12, 45], [3, 12, 46], [4, 12, 47], [1, 13, 48], [2, 13, 49], [3, 13, 50], [4, 13, 51]] // matriz com informações de todas as cartas possíveis.
 
 let CartasExistentes = [] // array para conferir quais cartas existem
-let CartasCriadas = []
+let CartasCriadas = [] // array para criar cartas
 let CartasSelecionadas = [] // array de cartas que foram selecionadas pelo jogador
 
 const divCartas = document.getElementById('cartas')// variável para conseguir a div #cartas
@@ -14,10 +14,11 @@ function randomizarCarta(min, max) {
 
 // FUNÇÃO PARA GERAR A MÃO DE JOGO
 let QuantMao = 8 // variável da quantidade de mão 
-let cardId = 0 // variável do id da carta
 async function gerarMao() {
-    for (let i = 0; i < QuantMao; i++) { //ativa conforme a quant de mão que o jogador tem
-        if (CartasExistentes.length < IdCartas.length - 1) { //confere se já não foram geradas todas as cartas possíveis
+    let cardId = 0 // variável do id da carta
+    if (CartasExistentes.length < IdCartas.length - 1) { //confere se já não foram geradas todas as cartas possíveis
+        for (let i = 0; i < QuantMao; i++) { //ativa conforme a quant de mão que o jogador tem
+
             cardId = randomizarCarta(0, 51)
             if (CartasCriadas.includes(IdCartas[cardId])) { // confere se essa carta já não existe
                 i = i - 1
@@ -25,15 +26,16 @@ async function gerarMao() {
                 CartasCriadas[i] = []
                 CartasCriadas[i] = IdCartas[cardId]
             }
+
         }
+        ordenarCarta(CartasCriadas.length) // chama a função para ordenar as cartas
+        for (let i = 0; i < CartasCriadas.length; i++) { //cria a carta
+            criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1], CartasExistentes.length)
+            await delay(50)
+        }
+        console.log(CartasCriadas)
+        console.log(CartasExistentes)
     }
-    ordenarCarta(CartasCriadas.length) // chama a função para ordenar as cartas
-    for (let i = 0; i < CartasCriadas.length; i++) { //cria a carta
-        criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1], CartasCriadas.length)
-        await delay(50)
-    }
-    console.log(CartasCriadas)
-    console.log(CartasExistentes)
 }
 
 // FUNÇÃO PARA ORDENAR AS CARTAS
@@ -75,9 +77,10 @@ async function criarCarta(id, naipe, classe, posicao) {
     let naipeIndex = document.getElementById(`naipeId${id}`) // consegue o id do naipe
     naipeIndex.style.backgroundPosition = `${classe * 7}vw ${naipe * 18}vh` // ajeita o naipe conforme qual carta é (muda o sprite)
 
+    IdCartas[id].push(posicao)
     CartasExistentes.push(IdCartas[id])
 
-    let ploim = new Audio("ploim.mp3");
+    let ploim = new Audio("truh.wav");
     ploim.play() //toca o audio "ploim" do abel
 
     ajeitarCarta()
@@ -114,22 +117,29 @@ async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+let numCarta = 0
 // FUNÇÂO PARA CONSEGUIR ID DE CARTAS CLICADAS
 window.onload = function inicializarEventosCartas() {
     divCartas.addEventListener('click', (event) => { // checa se a carta foi clicada
         const carta = event.target.closest('.carta');
 
-        if (carta) {
+        if (carta && CartasSelecionadas.length <= 4) {
             const idCompleto = carta.id; // aquí seria o id completo, ex: "cartaId25"
             const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
-
-            console.log('Carta clicada! ID:', id); // isso aquí é só teste.
-
             const naipe = IdCartas[id][0]; //meio autoexplicativo
             const classe = IdCartas[id][1];
-            console.log('Naipe:', naipe, 'Classe:', classe);  // isso aquí é só teste.
-
-            // selecionarCarta(id, naipe, classe);
+            if(CartasSelecionadas.includes(IdCartas[id])){
+                carta.style.transform = `translateY(0px)`
+                CartasSelecionadas.splice(IdCartas[id],1)
+                console.log(CartasSelecionadas + '  disselecionar')
+                numCarta --
+            }else{
+                CartasSelecionadas[numCarta] = []
+                CartasSelecionadas[numCarta] = IdCartas[id]
+                carta.style.transform = `translateY(-5vh)`
+                console.log(CartasSelecionadas + '  selecionar')
+                numCarta ++
+            }
         }
     });
 }
