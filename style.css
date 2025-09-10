@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family: 'fonteBalatro'; /* A unique name for your font */
+  src: url('./balatroFont.woff2') format('woff2'); /* Path to your WOFF2 font file */
+  font-weight: normal; /* Optional: Define font weight if multiple weights exist */
+  font-style: normal;  /* Optional: Define font style (e.g., italic) */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -24,7 +32,7 @@ main {
 
 #jogo {
   width: 75vw;
-  height: 50vh;
+  height: 40vh;
 }
 
 #cartas {
@@ -34,6 +42,22 @@ main {
   flex-direction: row;
   justify-content: center;
   
+}
+
+#botoes{
+  width: 75vw;
+  height: 10vh;
+  text-align: center;
+}
+
+.botoes{
+  width: 10vw;
+  height: 8vh;
+  border-radius: 10%;
+  background-color: rgba(238,66,56,255);
+  color:rgba(252,247,254,255);
+  font-family: "fonteBalatro";
+  font-size:  25px;
 }
 
 .spawn {

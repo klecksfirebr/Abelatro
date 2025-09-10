@@ -3,6 +3,7 @@ let IdCartas = [[1, 1, 0], [2, 1, 1], [3, 1, 2], [4, 1, 3], [1, 2, 4], [2, 2, 5]
 let CartasExistentes = [] // array para conferir quais cartas existem
 let CartasCriadas = [] // array para criar cartas
 let CartasSelecionadas = [] // array de cartas que foram selecionadas pelo jogador
+let CartasVasco = [] //array de cartas que foram de vasco
 
 const divCartas = document.getElementById('cartas')// variável para conseguir a div #cartas
 
@@ -20,7 +21,7 @@ async function gerarMao() {
         for (let i = 0; i < QuantMao; i++) { //ativa conforme a quant de mão que o jogador tem
 
             cardId = randomizarCarta(0, 51)
-            if (CartasCriadas.includes(IdCartas[cardId])) { // confere se essa carta já não existe
+            if (CartasCriadas.includes(IdCartas[cardId]) || CartasVasco.includes(IdCartas[cardId])) { // confere se essa carta já não existe
                 i = i - 1
             } else { //se a carta não existir, adiciona ela para o array de cartas que serão criadas
                 CartasCriadas[i] = []
@@ -52,6 +53,9 @@ function ordenarCarta(qtde) {
     }
 }
 
+
+
+// davi esteve aqui
 
 //i wanna fucking kill myself
 
@@ -121,25 +125,43 @@ let numCarta = 0
 // FUNÇÂO PARA CONSEGUIR ID DE CARTAS CLICADAS
 window.onload = function inicializarEventosCartas() {
     divCartas.addEventListener('click', (event) => { // checa se a carta foi clicada
-        const carta = event.target.closest('.carta');
+        const carta = event.target.closest('.carta'); // pega a carta que foi clicada
 
-        if (carta && CartasSelecionadas.length <= 4) {
-            const idCompleto = carta.id; // aquí seria o id completo, ex: "cartaId25"
-            const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
-            const naipe = IdCartas[id][0]; //meio autoexplicativo
-            const classe = IdCartas[id][1];
-            if(CartasSelecionadas.includes(IdCartas[id])){
-                carta.style.transform = `translateY(0px)`
-                CartasSelecionadas.splice(IdCartas[id],1)
-                console.log(CartasSelecionadas + '  disselecionar')
-                numCarta --
-            }else{
-                CartasSelecionadas[numCarta] = []
-                CartasSelecionadas[numCarta] = IdCartas[id]
-                carta.style.transform = `translateY(-5vh)`
+        const idCompleto = carta.id; // aquí seria o id completo, ex: "cartaId25"
+        const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
+        if (CartasSelecionadas.includes(id)) { // checa se a carta já foi clicada ou não
+            carta.style.transform = `translateY(0px)` // animação da carta
+            CartasSelecionadas = CartasSelecionadas.filter(cartaId => cartaId !== id); // remove a carta do array
+            console.log(CartasSelecionadas + '  disselecionar')
+            numCarta--
+        } else {
+            if (carta && CartasSelecionadas.length <= 4) { // checa se já não foram selecionadas 5 cartas
+                CartasSelecionadas[numCarta] = [] //adiciona o id ao array
+                CartasSelecionadas[numCarta] = id
+                carta.style.transform = `translateY(-5vh)` // animação da carta
                 console.log(CartasSelecionadas + '  selecionar')
-                numCarta ++
+                numCarta++
             }
         }
     });
+}
+
+async function descarte(){
+    let quantDescarte = 0
+    quantDescarte = CartasSelecionadas.length
+
+    if(quantDescarte < 0){
+        cardId = randomizarCarta(0, 51)
+            if (CartasCriadas.includes(IdCartas[cardId]) || CartasVasco.includes(IdCartas[cardId])) { // confere se essa carta já não existe
+                i = i - 1
+            } else { //se a carta não existir, adiciona ela para o array de cartas que serão criadas
+                CartasCriadas[i] = []
+                CartasCriadas[i] = IdCartas[cardId]
+            }
+        ordenarCarta(CartasCriadas.length) // chama a função para ordenar as cartas
+        for (let i = 0; i < quantDescarte; i++) { //cria a carta
+            criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1], CartasExistentes.length)
+            await delay(50)
+        }
+    }
 }
