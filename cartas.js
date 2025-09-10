@@ -146,18 +146,27 @@ window.onload = function inicializarEventosCartas() {
     });
 }
 
-async function descarte(){
+async function descarte() {
+    let cardId = 0
     let quantDescarte = 0
     quantDescarte = CartasSelecionadas.length
 
-    if(quantDescarte < 0){
-        cardId = randomizarCarta(0, 51)
+    if (quantDescarte > 0) {
+        for (let i = 0; i < quantDescarte; i++) { //ativa conforme a quant de mão que o jogador tem
+            cardId = randomizarCarta(0, 51)
             if (CartasCriadas.includes(IdCartas[cardId]) || CartasVasco.includes(IdCartas[cardId])) { // confere se essa carta já não existe
                 i = i - 1
             } else { //se a carta não existir, adiciona ela para o array de cartas que serão criadas
                 CartasCriadas[i] = []
                 CartasCriadas[i] = IdCartas[cardId]
+                CartasVasco[CartasVasco.length] = []
+                CartasVasco.push[IdCartas[cardId]]
+                const cartas = divCartas.querySelectorAll('.carta'); //consegue as div cartas
+                const idCompleto = cartas.id; // aquí seria o id completo, ex: "cartaId25"
+                const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
+                CartasSelecionadas = CartasSelecionadas.filter(cartaId => cartaId !== id);
             }
+        }
         ordenarCarta(CartasCriadas.length) // chama a função para ordenar as cartas
         for (let i = 0; i < quantDescarte; i++) { //cria a carta
             criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1], CartasExistentes.length)
