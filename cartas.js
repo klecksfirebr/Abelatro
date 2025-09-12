@@ -83,6 +83,7 @@ async function criarCarta(id, naipe, classe, posicao) {
 
     IdCartas[id].push(posicao)
     CartasExistentes.push(IdCartas[id])
+    console.log(IdCartas)
 
     let ploim = new Audio("truh.wav");
     ploim.play() //toca o audio "ploim" do abel
@@ -124,8 +125,8 @@ async function delay(ms) {
 let numCarta = 0
 // FUNÇÂO PARA CONSEGUIR ID DE CARTAS CLICADAS
 window.onload = function inicializarEventosCartas() {
-    divCartas.addEventListener('click', (event) => { // checa se a carta foi clicada
-        const carta = event.target.closest('.carta'); // pega a carta que foi clicada
+    divCartas.addEventListener('click', (juvencio) => { // checa se a carta foi clicada
+        const carta = juvencio.target.closest('.carta'); // pega a carta que foi clicada
 
         const idCompleto = carta.id; // aquí seria o id completo, ex: "cartaId25"
         const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
@@ -148,8 +149,7 @@ window.onload = function inicializarEventosCartas() {
 
 async function descarte() {
     let cardId = 0
-    let quantDescarte = 0
-    quantDescarte = CartasSelecionadas.length
+    let quantDescarte = CartasSelecionadas.length
 
     if (quantDescarte > 0) {
         for (let i = 0; i < quantDescarte; i++) { //ativa conforme a quant de mão que o jogador tem
@@ -159,17 +159,16 @@ async function descarte() {
             } else { //se a carta não existir, adiciona ela para o array de cartas que serão criadas
                 CartasCriadas[i] = []
                 CartasCriadas[i] = IdCartas[cardId]
-                CartasVasco[CartasVasco.length] = []
-                CartasVasco.push[IdCartas[cardId]]
-                const cartas = divCartas.querySelectorAll('.carta'); //consegue as div cartas
-                const idCompleto = cartas.id; // aquí seria o id completo, ex: "cartaId25"
-                const id = idCompleto.replace('cartaId', ''); // esse aquí só pega o número
-                CartasSelecionadas = CartasSelecionadas.filter(cartaId => cartaId !== id);
+                console.log(CartasCriadas)
+                CartasVasco.push(CartasCriadas[i])
+                CartasSelecionadas = CartasSelecionadas.filter(joemama => CartasSelecionadas[cardId]);
             }
         }
-        ordenarCarta(CartasCriadas.length) // chama a função para ordenar as cartas
+        ordenarCarta(quantDescarte) // chama a função para ordenar as cartas
         for (let i = 0; i < quantDescarte; i++) { //cria a carta
-            criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1], CartasExistentes.length)
+            criarCarta(CartasCriadas[i][2], CartasCriadas[i][0], CartasCriadas[i][1],CartasCriadas[i][3])
+            const carta = divCartas.querySelectorAll(`#cartaId${CartasVasco[i][2]}`);
+            carta.remove
             await delay(50)
         }
     }
