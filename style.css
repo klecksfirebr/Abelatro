@@ -16,26 +16,24 @@ body {
 }
 
 #abelDeTras{
-  height: 100vh;
-  width: 100vw;
+  height: 180vh;
+  width: 180vw;
   background-image: url(./abelDoWhatsapp.png);
-  animation: abel 10s ease-in-out;
+  animation: abel 15s ease-in-out;
   animation-iteration-count: infinite;
   position: absolute;
   z-index: -1;
   animation-direction: alternate-reverse;
-  background-size: 10vw,10vh;
+  background-size: 3vw,3vh;
+  opacity: 40%;
 }
 
 @keyframes abel{
   0%{
-    transform:scale(1);
-    transform:rotateY(50deg);
-    
+    transform: scale(1) skewX(0deg)  rotate(0deg) ;
   }
   100%{
-    transform:scale(1.3);
-    transform:rotateY(100deg);
+    transform: scale(2)  skewX(50deg)  rotate(360deg) ;
   }
 }
 
@@ -82,9 +80,72 @@ body {
     align-items: flex-end;
     background-color: rgba(238,66,56,255);
     position: absolute;
-    top: 300px;
-    right: 20;
+    top: 58vh;
+    left: 1vw;
+    margin-left: 30px;
 }
+#caixa{
+    width: 21vw;
+    height: 20vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(27,38,40,255);
+    position: absolute;
+    top: 46vh;
+    left: 1vw;
+    margin-left: 1vw;
+}
+
+#hands{
+    width: 10vw;
+    height: 7vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(27,38,40,255);
+    position: absolute;
+    top: 70vh;
+    left: 4vw;
+    margin-left: 1vw;
+}
+
+#score{
+  width: 20vw;
+  height: 6vh;
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: rgba(27,38,40,255);
+  position: absolute;
+  top: 36vh;
+  left: 1vw;
+  margin-left: 1vw;
+  padding: 0 20px;
+}
+
+p{
+  color: white;
+  font-family: "fonteBalatro";
+  font-size: 20px;
+  margin: 0px
+  
+}
+
+#score2{
+  width: 13vw;
+  height: 4vh;
+  display: flex;
+  border-radius: 8px;
+  background-color: rgba(47,58,60,255);
+  left: 5vw;  
+  bottom: 0.5vw;
+}
+
 #abeis{
     width: 8vw;
     height: 6vh;
@@ -94,8 +155,9 @@ body {
     align-items: flex-end;
     background-color: rgba(5,144,245,255);
     position: absolute;
-    top: 300px;
-    right: 990px;
+    top: 58vh;
+    left: 10vw;
+    margin-left: 4vw;
 }
 
 #Mao{
