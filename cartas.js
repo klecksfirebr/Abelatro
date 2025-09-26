@@ -41,16 +41,7 @@ async function gerarMao() {
 
 // FUNÇÃO PARA ORDENAR AS CARTAS
 function ordenarCarta(qtde) {
-    let valor = [] // variável para guardar o valor
-    for (let j = 0; j < qtde; j++) { // for's para comparar as cartas
-        for (let i = 0; i < qtde - (j + 1); i++) {
-            if (CartasCriadas[i][1] > CartasCriadas[i + 1][1]) { // checa se a carta é maior que a próxima carta
-                valor = CartasCriadas[i][1] //se for, move a carta 1 espaço pra frente e move o outro pra trás.
-                CartasCriadas[i][1] = CartasCriadas[i + 1][1]
-                CartasCriadas[i + 1][1] = valor
-            }
-        }
-    }
+    CartasCriadas.sort((a, b) => a[1] - b[1]);
 }
 
 
@@ -83,14 +74,13 @@ async function criarCarta(id, naipe, classe, posicao) {
 
     IdCartas[id].push(posicao)
     CartasExistentes.push(IdCartas[id])
-    console.log(IdCartas)
 
     let ploim = new Audio("truh.wav");
     ploim.play() //toca o audio "ploim" do abel
 
     ajeitarCarta()
 
-    await delay(250) //espera a animação terminar
+    await delay(850) //espera a animação terminar
 
     let cartaIndex = document.getElementById(`cartaId${id}`)
     cartaIndex.classList.remove('spawn'); //retira a classe que fazia a animação
@@ -115,7 +105,7 @@ function ajeitarCarta() {
     }
 }
 
-// o jair é gay
+// o jair é gay²
 
 // isso aquí é só para o delay() funcionar
 async function delay(ms) {

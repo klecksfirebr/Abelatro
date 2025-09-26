@@ -28,14 +28,14 @@ body {
   opacity: 40%;
 }
 
-@keyframes abel{
+/* @keyframes abel{
   0%{
     transform: scale(1) skewX(0deg)  rotate(0deg) ;
   }
   100%{
     transform: scale(2)  skewX(50deg)  rotate(360deg) ;
   }
-}
+} */
 
 #blind {
   background: linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54), rgb(54, 54, 54));
@@ -112,6 +112,20 @@ body {
     margin-left: 1vw;
 }
 
+#handsT{
+  width: 10vw;
+    height: 7vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(47, 58, 60);
+    position: absolute;
+    top: 70vh;
+    left: 4vw;
+    margin-left: 1vw;
+}
+
 #score{
   width: 20vw;
   height: 6vh;
@@ -179,7 +193,8 @@ p{
 }
 
 .spawn {
-  animation: spawn 250ms;
+  animation: spawn 850ms;
+  animation-timing-function: cubic-bezier( 0.35,0.02, 0.00,2.08 ) ;
 }
 
 .carta {
@@ -212,15 +227,15 @@ p{
 }
 
 .naipeSpawn{
-  animation: naipeSpawn 250ms;
+  animation: naipeSpawn 850ms;
 }
 
 
 @keyframes spawn {
   0% {
-    transform: translateX(500px);
+    transform: translateX(650px);
     background-image: url(./carta.png);
-    rotate: -25deg;
+    rotate: -35deg;
   }
   
   50% {
@@ -236,13 +251,16 @@ p{
     rotate: 0deg;
     transform: rotateY(360deg);
     transform: translateX(0px);
-
   }
 }
 
 @keyframes naipeSpawn {
   0% {
     opacity: 100%;
+  }
+
+  30% {
+    opacity: 0%;
   }
 
   50% {
