@@ -1,9 +1,9 @@
 
 @font-face {
-  font-family: 'fonteBalatro'; /* A unique name for your font */
-  src: url('./balatroFont.woff2') format('woff2'); /* Path to your WOFF2 font file */
-  font-weight: normal; /* Optional: Define font weight if multiple weights exist */
-  font-style: normal;  /* Optional: Define font style (e.g., italic) */
+  font-family: 'fonteBalatro';
+  src: url('./balatroFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal; 
 }
 
 body {
@@ -69,110 +69,71 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-}
-
-#multiAbel{
+  }
+  
+  /*---------------------------------- HUD blind ------------------------------------  */
+  
+  #multiAbel{
     width: 8vw;
     height: 6vh;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: flex-end;
     background-color: rgba(238,66,56,255);
-    position: absolute;
-    top: 58vh;
-    left: 1vw;
+    bottom: 1vh;
+    left: 0vw; 
     margin-left: 30px;
-}
+  }
+
+  #abeis{
+    width: 8vw;
+    height: 6vh;
+    background-color: rgba(5,144,245,255);
+    bottom: 1vh;
+    left: 9vw; 
+    margin-left: 4vw;
+  }
+  
 #caixa{
-    width: 21vw;
+    width: 23vw;
     height: 20vh;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: flex-end;
     background-color: rgba(27,38,40,255);
-    position: absolute;
     top: 46vh;
-    left: 1vw;
     margin-left: 1vw;
 }
 
 #hands{
     width: 10vw;
     height: 7vh;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: flex-end;
     background-color: rgba(27,38,40,255);
-    position: absolute;
-    top: 70vh;
-    left: 4vw;
-    margin-left: 1vw;
-}
-
-#handsT{
-  width: 10vw;
-    height: 7vh;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: rgba(47, 58, 60);
-    position: absolute;
     top: 70vh;
     left: 4vw;
     margin-left: 1vw;
 }
 
 #score{
-  width: 20vw;
+  width: 23vw;
   height: 6vh;
-  display: flex;
-  border-radius: 8px;
-  justify-content: center;
-  align-items: center;
-  
+  align-items: center !important;
   background-color: rgba(27,38,40,255);
-  position: absolute;
   top: 36vh;
-  left: 1vw;
   margin-left: 1vw;
-  padding: 0 20px;
 }
 
-p{
-  color: white;
-  font-family: "fonteBalatro";
-  font-size: 20px;
-  margin: 0px
-  
+#score p{
+  left: 2vw;
+  position: absolute;
 }
 
 #score2{
-  width: 13vw;
-  height: 4vh;
+  width: 14vw;
+  height: 5vh;
   display: flex;
   border-radius: 8px;
   background-color: rgba(47,58,60,255);
-  left: 5vw;  
-  bottom: 0.5vw;
+  left: 8vw;  
+  position: absolute;
 }
 
-#abeis{
-    width: 8vw;
-    height: 6vh;
-    display: flex;
-    border-radius: 8px;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: rgba(5,144,245,255);
-    position: absolute;
-    top: 58vh;
-    left: 10vw;
-    margin-left: 4vw;
-}
+
+
 
 #Mao{
   background-color:rgba(5,144,245,255);
@@ -181,6 +142,23 @@ p{
 #descartar{
   background-color: rgba(238,66,56,255);
   color:rgba(252,247,254,255);
+}
+
+.HUD{
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+}
+
+/* --------------------------------------------------------------------------------------------*/
+p{
+  color: white;
+  font-family: "fonteBalatro";
+  font-size: 20px;
+  margin: 0px
+  
 }
 
 .botoes{
