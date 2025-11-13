@@ -78,36 +78,52 @@ main{
 
 /*---------------------------------- HUD blind ------------------------------------  */
 
+#caixa {
+  width: 18vw;
+  height: 20vh;
+  background-color: rgb(27, 38, 40, 255);
+  top: 46vh;
+  margin-left: 1vw;
+}
+
 #multiAbel {
-  width: 8vw;
+  width: 6.5vw;
   height: 6vh;
-  background-color: rgba(238, 66, 56, 255);
+  background-color: rgb(238, 66, 56);
   bottom: 1vh;
-  left: 0vw;
-  margin-left: 30px;
+  left: 1vw;
 }
 
 #abeis {
-  width: 8vw;
+  width: 6.5vw;
   height: 6vh;
-  background-color: rgba(5, 144, 245, 255);
+  background-color: rgb(5, 144, 245);
   bottom: 1vh;
-  left: 5vw;
-  margin-left: 4vw;
+  left: 10.5vw;
 }
 
-#caixa {
-  width: 19vw;
-  height: 20vh;
-  background-color: rgba(27, 38, 40, 255);
-  top: 46vh;
-  margin-left: 1vw;
+#tipoDeMao{
+  width: 15vw;
+  height: 10vh;
+  text-align: center;
+  top: 1vh;
+  position: absolute;
+}
+
+#x{
+  bottom: 2.5vh;
+  font-size: 1.7rem;
+  color: rgb(238, 66, 56);
+}
+
+#caixa p{
+  margin-bottom: 2vh;
 }
 
 #hands {
   width: 4vw;
   height: 7vh;
-  background-color: rgba(27, 38, 40, 255);
+  background-color: rgb(27, 38, 40, 255);
   top: 70vh;
   left: 10vw;
   margin-left: 1vw;
@@ -116,7 +132,7 @@ main{
 #descartes {
   width: 4vw;
   height: 7vh;
-  background-color: rgba(27, 38, 40, 255);
+  background-color: rgb(27, 38, 40);
   top: 70vh;
   left: 15vw;
   margin-left: 1vw;
@@ -126,7 +142,7 @@ main{
   width: 19vw;
   height: 6vh;
   align-items: center !important;
-  background-color: rgba(27, 38, 40, 255);
+  background-color: rgb(27, 38, 40);
   top: 36vh;
   margin-left: 1vw;
 }
@@ -141,18 +157,18 @@ main{
   height: 5vh;
   display: flex;
   border-radius: 8px;
-  background-color: rgba(47, 58, 60, 255);
+  background-color: rgb(47, 58, 60);
   left: 4vw;
   position: absolute;
 }
 
 #Mao {
-  background-color: rgba(5, 144, 245, 255);
+  background-color: rgb(5, 144, 245);
 }
 
 #descartar {
-  background-color: rgba(238, 66, 56, 255);
-  color: rgba(252, 247, 254, 255);
+  background-color: rgb(238, 66, 56);
+  color: rgb(252, 247, 254);
 }
 
 .HUD {
