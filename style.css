@@ -78,11 +78,36 @@ main{
 
 /*---------------------------------- HUD blind ------------------------------------  */
 
+#score {
+  width: 18vw;
+  height: 6vh;
+  align-items: center !important;
+  background-color: rgb(27, 38, 40);
+  top: 36vh;
+  margin-left: 1vw;
+}
+
+#score p {
+  left: 1.5vw;
+  position: absolute;
+  font-size: 1rem;
+}
+
+#score2 {
+  width: 12vw;
+  height: 5vh;
+  display: flex;
+  border-radius: 8px;
+  background-color: rgb(47, 58, 60);
+  left: 5.5vw;
+  position: absolute;
+}
+
 #caixa {
   width: 18vw;
-  height: 20vh;
+  height: 17vh;
   background-color: rgb(27, 38, 40, 255);
-  top: 46vh;
+  top: 43vh;
   margin-left: 1vw;
 }
 
@@ -103,11 +128,27 @@ main{
 }
 
 #tipoDeMao{
-  width: 15vw;
-  height: 10vh;
+  display:flex;
+  flex-direction: row;
+  width: 10vw;
+  height: 7vh;
   text-align: center;
-  top: 1vh;
+  top: 3vh;
+  left: 3vw;
   position: absolute;
+}
+
+#mao{
+  width: 10vw;
+  height: 7vh;
+  font-size: 1.2rem;
+  text-wrap:nowrap;
+}
+
+#lvl{
+  margin-left: 1vw;
+  top: 2vh;
+  font-size: 0.8rem;
 }
 
 #x{
@@ -121,48 +162,25 @@ main{
 }
 
 #hands {
-  width: 4vw;
-  height: 7vh;
+  width: 5.5vw;
+  height: 9vh;
   background-color: rgb(27, 38, 40, 255);
-  top: 70vh;
-  left: 10vw;
+  top: 61vh;
+  left: 6.5vw;
   margin-left: 1vw;
 }
 
 #descartes {
-  width: 4vw;
-  height: 7vh;
+  width: 5.5vw;
+  height: 9vh;
   background-color: rgb(27, 38, 40);
-  top: 70vh;
-  left: 15vw;
+  top: 61vh;
+  left: 12.5vw;
   margin-left: 1vw;
 }
 
-#score {
-  width: 19vw;
-  height: 6vh;
-  align-items: center !important;
-  background-color: rgb(27, 38, 40);
-  top: 36vh;
-  margin-left: 1vw;
-}
 
-#score p {
-  left: 0.7vw;
-  position: absolute;
-}
-
-#score2 {
-  width: 10vw;
-  height: 5vh;
-  display: flex;
-  border-radius: 8px;
-  background-color: rgb(47, 58, 60);
-  left: 4vw;
-  position: absolute;
-}
-
-#Mao {
+#jogar {
   background-color: rgb(5, 144, 245);
 }
 
