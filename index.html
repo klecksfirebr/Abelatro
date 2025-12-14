@@ -1,62 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="abel-sigma.png" type="image/x-icon">
-    <script src="cartas.js" defer></script>
+    <script src="cartas.js"defer></script>
     <title>Abelatro</title>
 </head>
-
 <body>
     <div id="blind">
         <button onclick="gerarMao()">criar carta</button>
-
-        <div class="HUD" id="score">
-            <p>Round <br> score </p>
+    
+        <div id="score">
+            <p>round <br> score </p>
             <div id="score2">
 
             </div>
         </div>
-        <div class="HUD" id="caixa">
-            <div id="tipoDeMao">
-                <p id="mao">Straight Flush</p>
-                <p id="lvl">lvl.1</p>
-            </div>
-            <br>
-            <div class="HUD" id="abeis">
-                <p>10000000</p>
-            </div>
-            <p id="x">X</p>
-            <div class="HUD" id="multiAbel">
-                <p>10000000</p>
-            </div>
-        </div>
-        <div class="HUD" id="hands">
+        <div id="caixa">
 
         </div>
-        <div class="HUD" id="descartes">
+        <div id="abeis">
 
+        </div>
+        <div id="multiAbel">
+            
+        </div>
+        <div id="hands">
+            
         </div>
     </div>
     <div id="abelDeTras"></div>
     <main>
         <div id="jokers">
-
+    
         </div>
         <div id="jogo">
-
+    
         </div>
         <div id="cartas">
-
+        
         </div>
         <div id="botoes">
-            <button id="jogar" class="botoes">Jogar Mao</button>
+            <button id="Mao" class="botoes">Jogar Mao</button>
             <button id="descartar" class="botoes" onclick="descarte()">Descartar</button>
         </div>
     </main>
 </body>
-
 </html>

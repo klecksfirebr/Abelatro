@@ -1,33 +1,30 @@
+
 @font-face {
-  font-family: 'fonteBalatro';
-  src: url('./balatroFont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'fonteBalatro'; /* A unique name for your font */
+  src: url('./balatroFont.woff2') format('woff2'); /* Path to your WOFF2 font file */
+  font-weight: normal; /* Optional: Define font weight if multiple weights exist */
+  font-style: normal;  /* Optional: Define font style (e.g., italic) */
 }
 
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction:row-reverse;
   background: linear-gradient(rgba(24, 95, 10, 0.438), rgba(27, 107, 11, 0.438), rgba(33, 128, 14, 0.438));
+  flex-direction: row;
   overflow: hidden;
 }
 
-main{
-  right: 1px;
-} 
-
-#abelDeTras {
-  height: 100vh;
-  width: 100vw;
-  background-image: url(./abelDoWhatsapp.png);
+#abelDeTras{
+  height: 180vh;
+  width: 180vw;
+  background-image: url(./img/abelDoWhatsapp.png);
   animation: abel 15s ease-in-out;
   animation-iteration-count: infinite;
   position: absolute;
   z-index: -1;
   animation-direction: alternate-reverse;
-  background-size: 3vw, 3vh;
+  background-size: 3vw,3vh;
   opacity: 40%;
 }
 
@@ -43,190 +40,169 @@ main{
 #blind {
   background: linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54), rgb(54, 54, 54));
   height: 100vh;
-  width: 20vw;
-  left: 4vw;
-  position: absolute;
+  width: 25vw;
 }
 
 #jokers {
-  width: 71vw;
+  width: 75vw;
   height: 25vh;
 }
 
 #jogo {
-  width: 71vw;
+  width: 75vw;
   height: 40vh;
 }
 
 #cartas {
-  width: 71vw;
+  width: 75vw;
   height: 25vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  
 }
 
 #botoes {
-  width: 71vw;
-  height: 10vh;
+    width: 75vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#multiAbel{
+    width: 8vw;
+    height: 6vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(238,66,56,255);
+    position: absolute;
+    top: 58vh;
+    left: 1vw;
+    margin-left: 30px;
+}
+#caixa{
+    width: 21vw;
+    height: 20vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(27,38,40,255);
+    position: absolute;
+    top: 46vh;
+    left: 1vw;
+    margin-left: 1vw;
+}
+
+#hands{
+    width: 10vw;
+    height: 7vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(27,38,40,255);
+    position: absolute;
+    top: 70vh;
+    left: 4vw;
+    margin-left: 1vw;
+}
+
+#handsT{
+  width: 10vw;
+    height: 7vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(47, 58, 60);
+    position: absolute;
+    top: 70vh;
+    left: 4vw;
+    margin-left: 1vw;
+}
+
+#score{
+  width: 20vw;
+  height: 6vh;
   display: flex;
+  border-radius: 8px;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-}
-
-/*---------------------------------- HUD blind ------------------------------------  */
-
-#score {
-  width: 18vw;
-  height: 6vh;
-  align-items: center !important;
-  background-color: rgb(27, 38, 40);
+  background-color: rgba(27,38,40,255);
+  position: absolute;
   top: 36vh;
-  margin-left: 1vw;
-}
-
-#score p {
-  left: 1.5vw;
-  position: absolute;
-  font-size: 1rem;
-}
-
-#score2 {
-  width: 12vw;
-  height: 5vh;
-  display: flex;
-  border-radius: 8px;
-  background-color: rgb(47, 58, 60);
-  left: 5.5vw;
-  position: absolute;
-}
-
-#caixa {
-  width: 18vw;
-  height: 17vh;
-  background-color: rgb(27, 38, 40, 255);
-  top: 43vh;
-  margin-left: 1vw;
-}
-
-#multiAbel {
-  width: 6.5vw;
-  height: 6vh;
-  background-color: rgb(238, 66, 56);
-  bottom: 1vh;
   left: 1vw;
-}
-
-#abeis {
-  width: 6.5vw;
-  height: 6vh;
-  background-color: rgb(5, 144, 245);
-  bottom: 1vh;
-  left: 10.5vw;
-}
-
-#tipoDeMao{
-  display:flex;
-  flex-direction: row;
-  width: 10vw;
-  height: 7vh;
-  text-align: center;
-  top: 3vh;
-  left: 3vw;
-  position: absolute;
-}
-
-#mao{
-  width: 10vw;
-  height: 7vh;
-  font-size: 1.2rem;
-  text-wrap:nowrap;
-}
-
-#lvl{
   margin-left: 1vw;
-  top: 2vh;
-  font-size: 0.8rem;
+  padding: 0 20px;
 }
 
-#x{
-  bottom: 2.5vh;
-  font-size: 1.7rem;
-  color: rgb(238, 66, 56);
-}
-
-#caixa p{
-  margin-bottom: 2vh;
-}
-
-#hands {
-  width: 5.5vw;
-  height: 9vh;
-  background-color: rgb(27, 38, 40, 255);
-  top: 61vh;
-  left: 6.5vw;
-  margin-left: 1vw;
-}
-
-#descartes {
-  width: 5.5vw;
-  height: 9vh;
-  background-color: rgb(27, 38, 40);
-  top: 61vh;
-  left: 12.5vw;
-  margin-left: 1vw;
-}
-
-
-#jogar {
-  background-color: rgb(5, 144, 245);
-}
-
-#descartar {
-  background-color: rgb(238, 66, 56);
-  color: rgb(252, 247, 254);
-}
-
-.HUD {
-  display: flex;
-  border-radius: 8px;
-  justify-content: center;
-  align-items: flex-end;
-  position: absolute;
-}
-
-/* --------------------------------------------------------------------------------------------*/
-
-p {
+p{
   color: white;
   font-family: "fonteBalatro";
   font-size: 20px;
   margin: 0px
+  
 }
 
-.botoes {
+#score2{
+  width: 13vw;
+  height: 4vh;
+  display: flex;
+  border-radius: 8px;
+  background-color: rgba(47,58,60,255);
+  left: 5vw;  
+  bottom: 0.5vw;
+}
+
+#abeis{
+    width: 8vw;
+    height: 6vh;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(5,144,245,255);
+    position: absolute;
+    top: 58vh;
+    left: 10vw;
+    margin-left: 4vw;
+}
+
+#Mao{
+  background-color:rgba(5,144,245,255);
+}
+
+#descartar{
+  background-color: rgba(238,66,56,255);
+  color:rgba(252,247,254,255);
+}
+
+.botoes{
   width: 10vw;
   height: 8vh;
   border-radius: 10%;
-  color: rgba(252, 247, 254, 255);
+  color:rgba(252,247,254,255);
   font-family: "fonteBalatro";
   font-size: 20px;
 }
 
 .spawn {
   animation: spawn 850ms;
-  animation-timing-function: cubic-bezier(0.35, 0.02, 0.00, 2.08);
+  animation-timing-function: cubic-bezier( 0.35,0.02, 0.00,2.08 ) ;
 }
 
 .carta {
-  background-image: url(./carta.png);
+  background-image: url(./img/carta.png);
   width: 7vw;
   height: 19.8vh;
   background-size: cover;
   transition: 80ms ease-in-out;
-  position: relative;
+  position:relative;
 }
 
 .carta:hover {
@@ -238,8 +214,11 @@ p {
 
 .naipe {
   margin-top: 0.8vh;
-  background-image: url(cartas.png);
+  background-image: url(./img/cartas.png);
+  background-repeat: no-repeat;
   background-size: 91vw 72vh;
+  background-position: 0vw 0vh; 
+  transform: rotate(180deg);
   width: 7vw;
   height: 18vh;
 }
@@ -249,27 +228,26 @@ p {
   height: 18vh !important;
 }
 
-.naipeSpawn {
+.naipeSpawn{
   animation: naipeSpawn 850ms;
 }
-
 
 @keyframes spawn {
   0% {
     transform: translateX(650px);
-    background-image: url(./carta.png);
-    rotate: -35deg;
+    background-image: url(./img/carta.png);
+    rotate: -25deg;
   }
-
+  
   50% {
     transform: rotateY(180deg);
-    background-image: url(./back-carta.png);
+    background-image: url(./img/back-carta.png);
   }
-
-  90% {
-    background-image: url(./carta.png);
+  
+  90%{
+    background-image: url(./img/carta.png);
   }
-
+  
   100% {
     rotate: 0deg;
     transform: rotateY(360deg);
@@ -290,7 +268,7 @@ p {
     opacity: 0%;
   }
 
-  90% {
+  90%{
     opacity: 100%;
   }
 }
