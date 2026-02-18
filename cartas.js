@@ -7,6 +7,15 @@ let CartasVasco = [] //array de cartas que foram de vasco
 
 const divCartas = document.getElementById('cartas')// variável para conseguir a div #cartas
 
+class carta{
+    constructor(id, naipe, classe, posicao){
+        this.id = id
+        this.naipe = naipe
+        this.classe = classe
+        this.posicao = posicao
+    }
+}
+
 //meio autoexplicativo
 function randomizarCarta(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
